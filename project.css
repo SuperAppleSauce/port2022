@@ -1,0 +1,346 @@
+/* Locked pages only */
+.spline-watermark{
+    display: none !important;
+opacity: 0 !important;
+
+transform: scale(0%) !important;
+}
+
+#passArea{
+    display: grid;
+    grid-template-columns: 0fr 0fr;
+    column-gap: 0;
+    justify-content: center;
+    margin-bottom: 140px;
+
+    
+    
+
+}    
+    #pass {
+        width: 200px;
+        height: 40px;
+        font-size: 30px;
+        border: var(--darkGreen) 2px solid;
+        
+    }
+
+    .notifyText {
+        grid-column: span 2;
+        font-size: 24px;
+    visibility: hidden;
+
+    }
+    
+
+
+    #submitPass {
+        position: relative;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        font-size: 14px;
+        font-weight: 700;
+        color:white;
+        height: 44px;
+        width: 100px;    
+        background-color:var(--darkGreen);
+        box-shadow: none;
+        border-color: none;
+        
+  
+  
+    }
+
+    button{
+        border: none;
+        background-color:none ;
+    }
+    #submitPass:hover{
+         text-decoration: underline;
+    }
+
+input:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+/* end locked pages CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+}
+
+:root {
+    --lightGreen: #DDE5DD;
+    --darkGreen: #28403A;
+    --uniPadding: 120px;
+}
+
+.jello {
+    padding: 0 var(--uniPadding) 0;
+    margin-top: 120px;
+}
+
+header{
+    height: auto;
+    background-color: var(--lightGreen);
+    padding: 0 var(--uniPadding) 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: 500;
+    font-size: 30px;
+    /* line-height: 47px; */
+    color: var(--darkGreen);
+
+
+}
+
+header a{
+    text-decoration:none; 
+    color: var(--darkGreen);
+
+}
+header a:visited{
+    text-decoration:none; 
+    color: var(--darkGreen);
+
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 86px;
+    line-height: 103px;
+    letter-spacing: -0.677632px;
+    margin-bottom: 0px;
+    color: var(--darkGreen);
+}
+
+h2 {
+
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 76px;
+    letter-spacing: -0.5px;
+    color: var(--darkGreen);
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--darkGreen);
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--darkGreen);
+}
+
+p {
+    margin-top: 15px;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 42px;
+    color: var(--darkGreen);
+}
+
+section {
+    /* margin-top:60px ; */
+    margin-bottom: 140px;
+}
+
+.duoContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 21px;
+    row-gap: 30px;
+}
+
+section img {
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 48px;
+}
+
+.spacer {
+    border-bottom: 0.5px solid var(--darkGreen);
+    padding: 1px;
+    color: white;
+    margin-top: 120px;
+    margin-bottom: 80px;
+}
+
+footer div {
+    position: relative;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin-bottom: 140px;
+    height: auto;
+    z-index: 12;
+    padding-bottom: 36px;
+
+}
+
+footer h2 {
+    padding: 0 var(--uniPadding) 0;
+    
+}
+
+footer a {
+    margin-top: 24px;
+    margin-left: 30px;
+    padding: 12px 24px;
+    display: inline-block;
+    width: 300px;
+    height: 400px;
+    background: var(--lightGreen);
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.015);
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.3));
+    border-radius: 8px;
+    transform: translateX(120px);
+    text-decoration: none;
+
+}
+
+footer a:hover{
+    scale: 101%;
+    transition-duration: 100ms;
+    transition-timing-function: ease;
+}
+
+
+footer a p {
+    width: 80%;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    white-space: wrap;
+    
+}
+
+.projectOne{
+    background-image: url("https://res.cloudinary.com/dxchcqxvt/image/upload/v1658370649/port2022/Home/5G1_zmtefu.jpg");
+    background-position: center;
+    background-size: cover; 
+}
+
+.projectTwo{
+    background-image: url("https://res.cloudinary.com/dxchcqxvt/image/upload/v1658370649/port2022/Home/Solar1_ayhdy5.jpg");
+    background-position: center;
+    background-size: cover; 
+}
+
+.projectThree{
+    background-image: url("https://res.cloudinary.com/dxchcqxvt/image/upload/v1658370649/port2022/Home/IVA1_gl1u1x.jpg");
+    background-position: center;
+    background-size: cover; 
+    color: black;
+}
+
+.projectFour{
+    background-image: url("https://res.cloudinary.com/dxchcqxvt/image/upload/v1658370649/port2022/Home/MVA1_czuqeq.jpg");
+    background-position: center;
+    background-size: cover; 
+    
+}
+
+
+
+
+
+#scrollTop {
+    height: 30px;
+    width: 120px;
+    cursor: pointer;
+    position: fixed;
+    margin: 3% 5%;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    color: var(--darkGreen);
+    border-radius: 3px;
+    border: solid 2px var(--darkGreen);
+    letter-spacing: 1px;
+    font-size: 16px;
+    border-radius: 3px;
+    background: white;
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+    :root {
+        --uniPadding:30px;
+    }
+
+    .jello {
+        padding: 0 var(--uniPadding) 0;
+        margin-top: 48px;
+
+    }
+    
+
+    h1 {
+        font-size: 64px;
+        line-height: 70px;
+        margin-bottom: 0px;
+    }
+
+    h2 {
+        font-size: 48px;
+        line-height: 55px;
+        
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 24px;
+        color: var(--darkGreen);
+    }
+
+    h4 {
+        font-size: 18px;
+        line-height: 24px;
+        color: var(--darkGreen);
+    }
+
+    p {
+        margin-top: 12px;
+        font-size: 24px;
+        line-height: 34px;
+        color: var(--darkGreen);
+    }
+
+    section {
+        margin-bottom: 84px;
+    }
+    section img {
+        width: 100%;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    .duoContent {
+        display: grid;
+        grid-template-columns: 100%;
+        column-gap:0px;
+        row-gap: 12px;
+        
+    }
+
+    .duoContent .duoContentL{
+        grid-area: 2;
+    }
+
+    footer a{
+        transform: translateX(0px);
+        width: calc(300px*0.7);
+        height: calc(400px*0.7);
+    }
+}
