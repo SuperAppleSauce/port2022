@@ -8,7 +8,7 @@ document.getElementById("scrollTop").addEventListener("click", function () {
   gsap.to(window, {
     duration: 1,
     ease: Expo.easeOut,
-    scrollTo: { y: ".jello", offsetY: 70 }
+    scrollTo: { y: "header", offsetY: 0 }
   });
 });
 
