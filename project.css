@@ -288,14 +288,14 @@ footer a p {
     
 
     h1 {
-        font-size: 64px;
-        line-height: 70px;
+        font-size: 45px;
+        line-height: 50px;
         margin-bottom: 0px;
     }
 
     h2 {
-        font-size: 48px;
-        line-height: 55px;
+        font-size: 40px;
+        line-height: 45px;
         
     }
 
@@ -313,8 +313,8 @@ footer a p {
 
     p {
         margin-top: 12px;
-        font-size: 24px;
-        line-height: 34px;
+        font-size: 18px;
+        line-height: 24px;
         color: var(--darkGreen);
     }
 
