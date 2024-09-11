@@ -1,68 +1,209 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <title>Alexis Trevizo</title>
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link href="landing.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Spline+Sans:wght@300..700&display=swap" rel="stylesheet">
+    <title>Alexis Trevizo</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="landing.css" rel="stylesheet" type="text/css">
+
+    <style>
+       
+        :root {
+            --line-color: #fff; /* Default line color */
+            --line-spacing: calc(1/12 * 100%); /* Default spacing between lines */
+            --darkGreen: #28403A;
+        }
+        body{
+            background-color: var(--darkGreen); /* White background */
+        }
+        /* Grid Loading Animation Styles */
+        .grid-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+            background-color: var(--darkGreen); /* White background */
+            z-index: 1000; /* Ensure it’s on top of other content */
+        }
+
+        .vertical-line, .horizontal-line {
+            position: absolute;
+            background-color: var(--line-color); /* Line color from CSS variable */
+        }
+
+        .vertical-line {
+            width: 1px;
+            height: 0;
+            animation: grow-vertical 2s forwards;
+        }
+
+        .horizontal-line {
+            height: 1px;
+            width: 0;
+            animation: grow-horizontal 2s forwards;
+        }
+     
+        @keyframes grow-vertical {
+            0% {
+                height: 0;
+            }
+            100% {
+                height: 100vh;
+            }
+        }
+
+        @keyframes grow-horizontal {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 100vw;
+            }
+        }
+
+        /* Main Content Styles */
+        .content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    
+            position: relative;
+            text-align: center;
+            background-color: var(--darkGreen);
+        }
+
+        .show-content {
+            opacity: 1;
+            visibility: visible;
+            background-color: var(--darkGreen);
+        }
+    </style>
 </head>
-
 <body>
-    <div class="banner">
-        <div>
-            <h1>Alexis Trevizo</h1>
-            <p>Product Designer</p>
-            <div class="buttons"> <a id="workButton" >Work</a><a id="aboutButton" class="ghost">About</a></div>
-        </div>
+    <!-- Grid Loading Animation -->
+    <div id="grid-container" class="grid-container">
+        <!-- Create vertical lines based on spacing variable -->
+        <div class="vertical-line" style="left: var(--line-spacing); animation-delay: 0s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 2); animation-delay: 0.1s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 3); animation-delay: 0.2s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 4); animation-delay: 0.3s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 5); animation-delay: 0.4s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 6); animation-delay: 0.5s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 7); animation-delay: 0.6s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 8); animation-delay: 0.7s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 9); animation-delay: 0.8s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 10); animation-delay: 0.9s;"></div>
+        <div class="vertical-line" style="left: calc(var(--line-spacing) * 11); animation-delay: 1.0s;"></div>
 
-    </div>
-    <div class="works">
-        <h3>Selected works</h3>
-        <div class="caseStudies">
-            <a href="./Locked" class="projectOne">
-                <p>5G Home Self Setup</p>
-                
-            </a>
-            <a href="./MVA.html" class="projectFour ">
-                <p style="color: #000;">My Verizon App</p>
-                
-            </a>
-            <a href="./Solar.html" class="projectTwo">
-                <p>Residential Solar</p>
-                
-            </a>
-            <a  href="./IVA.html" class="projectThree">
-                <p style="color: #000;">Inside Verizon App</p>
-            </a>
-           
-        </div>
-
-    </div>
-    <div class="spacer">~</div>
-    <div class="about">
-        <h3>About</h3>
-        <div>
-            <p>Hi! I design things, but most importantly, I’m a people-person, and that’s the biggest reason why I love what I do. Whether it’s a user, a stakeholder, or a fellow team member, I incorporate their needs, their perspectives, and their values in everything I do. I’m a strong believer in an iterative process that involves frequent stakeholder visibility, data-driven decision-making, frequent co-creation, and constant user feedback.
-                ‍<br>
-                ‍<br>
-                In my free time, you can find me cultivating my vast collection of indoor plants, and tinkering with vintage electronics.</p>
-                 <img loading="lazy" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1658370649/port2022/Home/me_s3shgv.jpg">
-        </div>
+        <!-- Create horizontal lines based on spacing variable -->
+        <div class="horizontal-line" style="top: var(--line-spacing); animation-delay: 0s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 2); animation-delay: 0.1s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 3); animation-delay: 0.2s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 4); animation-delay: 0.3s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 5); animation-delay: 0.4s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 6); animation-delay: 0.5s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 7); animation-delay: 0.6s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 8); animation-delay: 0.7s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 9); animation-delay: 0.8s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 10); animation-delay: 0.9s;"></div>
+        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 11); animation-delay: 1.0s;"></div>
 
     </div>
 
-    <button class="ghost" ID="scrollTop"> Back to top</button>
+    <!-- Main Content -->
+    <div class="content">
+        <div class="banner">
+            <div class="landingHeadline">
+                <h1>Alexis Trevizo</h1>
+                <p>Designer & strategist focused on creating intuitive solutions for enterprises</p>  
+                   
+            </div>
+          
+            <!-- <h3 class="moreScroll"> Scroll for more</h3>   -->
+            <!-- <div class="arrow"></div> -->
+   
+        </div>
+        <div class="works">
+            <div class="projectContainer">
+                <a href="./Meta1.html" class="projectTitle">
+                    <h2>Managed Meta Accounts</h2>
+                    <p>Enterprise access, dev tools, & business account management </p>
+                </a>
 
+                <a href="./Meta1.html"  class="projectFive projectImage"></a>
+            </div>
+            <div class="projectContainer">
+                <a href="./5GHome.html" class="projectTitle">
+                    <h2>5G Home Self Setup</h2>
+                    <p>A new way to setup your 5G router </p>
+                </a>
+                <a href="./5GHome.html" class="projectOne projectImage"></a>
+            </div>
+            <div class="projectContainer">
+                <a href="./Solar.html" class="projectTitle">
+                    <h2>Residential Solar</h2>
+                    <p>Simplifying the solar installation pipeline & enhancing the ownership experience </p>
+                </a>
+                <a href="./Solar.html" class="projectTwo projectImage"></a>
+            </div>
+            <div class="projectContainer">
+                
+                <a href="./MVA.html" class="projectTitle">
+                    <h2>My Verizon App </h2>
+                    <p>Re-architecting & optimizing shop </p>
+                </a>
+                <a href="./MVA.html" class="projectFour projectImage"></a>
+             
+            </div>
+        </div>
+    </div>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js'></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js'></script>
+    <script src="./index.js"></script>
 
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js'></script>
-  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js'></script>
-  <script src="./index.js"></script>
+    <script>
+        window.addEventListener('load', () => {
+            const grid = document.getElementById('grid-container');
+            const content = document.querySelector('.content');
+            
+            // Fade in the grid-container
+            grid.style.opacity = '1';
+            grid.style.visibility = 'visible';
+            
+            // Show the main content after the grid animation is complete
+            setTimeout(() => {
+                grid.style.opacity = '0';
+                grid.style.visibility = 'hidden';
+                
+                // Show the main content with a cross-fade effect
+                setTimeout(() => {
+                    content.classList.add('show-content');
+                }, 500); // Delay to match the grid fade-out
+            }, 1500); // Delay to ensure all content is fully loaded
+        });
+    </script>
+    <script>
+        window.onload = function() {
+  var splineElement = document.querySelectorAll('spline-viewer');
+  
+  for (let pas = 0; pas < splineElement.length; pas++) {
+    var shadowRoot = splineElement[pas].shadowRoot;
+    shadowRoot.querySelector('#logo').remove();
+  }
+}
+    </script>
 </body>
 </html>
