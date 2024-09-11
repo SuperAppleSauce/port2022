@@ -50,13 +50,11 @@ margin-top: calc(7/12*100%);
      font-weight: 400;
      font-style: normal;
      line-height: 32px;
-     font-size:24px;
+     font-size: 24px;
      margin-bottom: 55px;
 
 }
 .arrow{
-    
-
     border-left: var(--darkGreen) 1px solid;
     height: 0;
     opacity: 1;
@@ -102,15 +100,17 @@ margin-top: calc(7/12*100%);
 }
 .projectTitle h2 {
     width: max-content;
+    max-width: 300px;
     font-family: "EB Garamond", serif;
     text-align: left;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    line-height: auto;
+    line-height: 36px;
     font-size: 36px;
     margin-bottom: 15px ;
     text-decoration: none;
+    
 }
 
 .projectTitle p {
@@ -128,7 +128,7 @@ margin-top: calc(7/12*100%);
 }
 
 .projectImage{
-    width: 360px !important;
+    min-width: 360px ;
     height: 230px;
     transition: 600ms ease; 
 }
@@ -197,12 +197,6 @@ margin-top: calc(7/12*100%);
     
 }
 
-
-
-
-
-
-
 .buttons .ghost {
     background: none;
     color: var(--darkGreen);
@@ -259,6 +253,11 @@ margin-top: calc(7/12*100%);
             gap: 30px;
             margin-bottom: 60px;
          }
+         .projectImage{
+            max-width: 300px;
+            
+        }
+
 
 .projectOne{
     width: 100%;
