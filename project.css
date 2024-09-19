@@ -148,7 +148,17 @@ h3 {
 
 
 }
-
+ol{
+    margin-left: 20px; margin-top: 24px;
+    line-height: 32px;
+    font-family: "Spline Sans", sans-serif ;
+    text-align: left;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-style: normal;
+    line-height: 24px;
+    font-size: 16px;
+}
 
 
 p {
@@ -270,6 +280,13 @@ footer a:hover{
 /* META1 */
 .projectFive{
     background-image: url("https://res.cloudinary.com/dxchcqxvt/image/upload/v1726031653/meta_wkeish.jpg");
+    background-position: center;
+    background-size: cover; 
+    
+}
+/* aware*/
+.projectSix{
+    background-image: url("https://res.cloudinary.com/dxchcqxvt/image/upload/v1598367252/portfolio/Aware1_zbt6gx.png");
     background-position: center;
     background-size: cover; 
     

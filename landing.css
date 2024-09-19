@@ -197,6 +197,14 @@ margin-top: calc(7/12*100%);
     
 }
 
+/* aware*/
+.projectSix{
+    background-image: url("https://res.cloudinary.com/dxchcqxvt/image/upload/v1598367252/portfolio/Aware1_zbt6gx.png");
+    background-position: center;
+    background-size: cover; 
+    
+}
+
 .buttons .ghost {
     background: none;
     color: var(--darkGreen);
