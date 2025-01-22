@@ -18,106 +18,288 @@
         body.loaded {
             opacity: 1;
         }
+
+        header {
+            z-index: 200;
+            background-color: var(--darkGreen);
+            padding: 24px var(--uniPadding) ;
+
+        }
+        header .moreProjects{
+            color: white;
+            float:right;
+            font-family: "Spline Sans", sans-serif ;
+            border: var(--darkGreen) 0.5px solid;
+            padding: 6px 12px;
+            text-align: left;
+            font-optical-sizing: auto;
+            font-weight: 350;
+            font-style: normal;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        header .moreProjects:hover{
+            border: white 0.5px solid;
+            padding: 6px 12px;
+            transition: color 0.3s;
+
+        
+        }
+
+        .title-section{
+            padding: 30px var(--uniPadding);
+
+        }
+
+    
+        .breadcrumbs {
+            position: sticky;
+            top: 0;
+            padding: 24px 0px 9px 0px;
+            
+            margin: 0 var(--uniPadding);
+            margin-bottom: 60px;
+            z-index: 200;
+            overflow-x: auto;
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .breadcrumbs ul {
+            justify-content: center;
+            list-style: none;
+            padding: 12px 12px;
+            /* height: auto; */
+            display: flex;
+            gap: 6px;
+            background: rgba(229, 229, 229, 0.50);
+            border: solid 0.5px #00000038;
+            backdrop-filter: blur(60px);
+        }
+
+        .breadcrumbs ul li {
+            font-family: "Spline Sans", sans-serif ;
+            font-size: 14px;
+            /* padding: 6px 12px; */
+        }
+
+        .breadcrumbs ul li a {
+            border: solid 0.5px #ffffff09;
+            text-decoration: none;
+            color: var(--darkGreen);
+            padding: 6px 12px;
+            transition: color 0.3s;
+            font-family: "Spline Sans", sans-serif ;
+        
+        }
+
+        .breadcrumbs ul li a:hover, .breadcrumbs ul li a.active {
+            /* color: white; */
+            /* border-bottom: 3px solid var(--darkGreen);; */
+            /* background-color: var(--darkGreen); */
+            /* border-radius: 3px; */
+            color:white;
+            border: solid 0.5px #00000009;
+            border-radius: var(--uniBorderRad);
+            background:  var(--darkGreen)
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01); */
+            /* padding: 24px; */
+        }
+ 
+  
+        section h2 {
+            margin-top: 0;
+        }
+
+  
+
+    
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 32px;
+            right: var(--uniPadding);
+            background-color: var(--darkGreen);
+            color: white;
+            border:solid #fff 1px; 
+            padding: 10px 15px;
+            /* border-radius: 5px; */
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 200;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+        @media (min-width: 769px) {
+            .breadcrumbs {
+                display: block;
+            }
+
+            .back-to-top {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumbs {
+                display: none;
+            }
+
+            .back-to-top {
+                display: block;
+            }
+            header {
+                position: sticky;
+                top: 0;
+                padding: 20px;
+
+        }
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="./index.html"> &#x27F5; </a>
+        <a href="./index.html"> Alexis Trevizo</a>
+        <a class="moreProjects" href="./index.html"> More projects </a>
     </header>
 
     <div id="shadowbox" class="shadowbox">
         <span class="close">&times;</span>
         <img class="shadowbox-content" id="shadowbox-img">
     </div>
+    <div class="breadcrumbs">
+        <ul>
+            <li><a href="#anchorOne">The Problem</a></li>
+            <li><a href="#anchorTwo">The Solution</a></li>
+            <li><a href="#anchorThree">Key Stages</a></li>
+            <li><a href="#anchorFour">Final Design</a></li>
+            <li><a href="#anchorFive">Impact</a></li>
+        </ul>
+    </div>
+    <div id="title" class="title-section">
+        <h1>Managed Meta Accounts</h1>
+    </div>
+    <!-- image -->
+    <section>
+        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1726029290/3p_bulk_z5tmnb.png" alt="Thumbnail">
+    </section>
     
-    <section>
-        <h1>Managed Meta Accounts: Managing Integrations</h1>
-        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/video/upload/v1726029274/3p_details_vigwdz.mov">
-    </section>
-
-<!-- Single paragraph -->
-    <section>
-        <h2>Context</h2>
-        <p>Managed Meta Accounts allow businesses to have a consolidated account structure for managing their various assets (like Facebook Pages, Instagram Accounts, ad accounts, etc.). It aims to provide more control, security, and access</p>
-    </section>
-<!-- Single paragraph -->
-    <section>
+    <!-- Single paragraph -->
+    <section id="anchorOne">
         <h2>The Problem</h2>
-        <p>Businesses needed a way to manage integrations used within their organization, beyond just people and assets. This gap in our existing solution posed a significant risk to our users. In response, I led the design of a integration management feature, allowing businesses to view, approve, and manage integrations used within their accounts.</p>
+        <p>Managed Meta Accounts allow businesses to have a consolidated account structure for managing their various assets (like Facebook Pages, Instagram Accounts, ad accounts, etc.). It aims to provide more control, security, and access.</p>
+        <p>Businesses needed a way to manage integrations used within their organization, beyond just people and assets. This gap in our existing solution posed a significant risk to our users. In response, I led the design of an integration management feature, allowing businesses to view, approve, and manage integrations used within their accounts.</p>
     </section>
-
-<!-- Single paragraph with image-->
-    <section>
-        <h2>North Star</h2>
+    
+    <section id="anchorTwo">
+        <h2>The Solution</h2>
+        <p>Managed accounts needed a way to allow admins and advertising partners to control which integrations can be used within their organization.</p>
+    </section>
+    
+    <!-- Single paragraph with image -->
+    <section id="anchorThree">
+        <h2>Developing a North Star</h2>
         <p>I developed a series of concepts that demonstrated the value of tool management within managed accounts. These concepts included early sketches, wireframes, and prototypes that illustrated how businesses could easily view, approve, and manage the tools being used within their accounts. My goal was to create a clear and compelling narrative that would get buy-in from our stakeholders.</p>
-            <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1726030225/3pConcepts_xzyog9.png" >
-            <!-- make into a gif later -->
+        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1726030225/3pConcepts_xzyog9.png" alt="Concept sketches">
     </section>
-   
-    <!-- duo content -->
-    <section>
-        <h2>User Testing Concepts</h2>
-        <!-- <p>Verizon customers were struggling to find the products. My team and I set out to
-            update & simplify the My Verizon App information architecture. I was focused on revamping the IA for the shop experience in order to enable easy navigation &
-            promote the discovery of new products.</p> -->
+    
+    <!-- Duo content -->
+    <section id="anchorThree">
+        <h2>Early Concepts</h2>
         <div class="duoContent">
-            <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1726029295/3p_start_iw1a66.png">
-            <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1726029293/3p_items_dkrwll.png">
+            <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737516012/port2022/3p/meta_duos-1_vi6khy.png" alt="Early concept 1">
+            <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737516012/port2022/3p/meta_duos_jy49go.png" alt="Early concept 2">
+        </div>
+    </section>
+    
+    <section id="anchorThree">
+        <h2>User Testing Concepts With Clients</h2>
+        <div class="duoContent">
+            <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737516012/port2022/3p/meta_duos-2_kdux9s.png" alt="User testing concept 1">
+            <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737516012/port2022/3p/meta_duos-3_gyv8ei.png" alt="User testing concept 2">
+        </div>
+    </section>
+    <section id="anchorThree">
+        <h2>Clients' Feedback</h2>
+        
+            <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737518797/port2022/3p/feedback_meta_sacenl.png" alt="feedback">
+            
+
+    </section>
+    
+    
+    <!-- Full length with grey -->
+    <section id="anchorFour" class="fullLength">
+        <h2>Sweating The Details</h2>
+        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1726029290/3p_bulk_z5tmnb.png" alt="Details image">
+        
+        <h2>Detailed View</h2>
+        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737510942/port2022/3p/final_meta_details_cqfqvi.png" alt="Detailed view">
+        
+        <h2>First Time Users</h2>
+        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737518503/port2022/3p/first_time_user5_bb4i6y.png" alt="First time users">
+        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737510942/port2022/3p/first_time_user_fmov38.png" alt="First time users">
+        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737510943/port2022/3p/first_time_user-2_rsvyhv.png" alt="First time users">
+        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737510943/port2022/3p/first_time_user-1_uacasj.png" alt="First time users">
+    </section>
+    
+    <section id="anchorFive">
+        <h2>What Was The Impact?</h2>
+        <div class="duoContent">
             <div class="duoContentL">
-                <h3>Table Format</h3>
+                <h1>9.9%</h1>
+                <p>Boost in adoption & enhancement product sentiment</p>
             </div>
             <div class="duoContentR">
-                <h3>Thumbnail Format</h3>
+                <h1>$1.1 Billion</h1>
+                <p>Of revenue was enabled thanks to this addition</p>
             </div>
         </div>
     </section>
-
-
- 
-<!-- fullLength with grey -->
-    <section class="fullLength">
-        <h2>Final: Bulk Actions</h2>
-        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1726029290/3p_bulk_z5tmnb.png">
-        <br>
-        <br>
-        <br>
-        <h2>Final: Integration Details </h2>
-        <img class="thumbnail" src="https://res.cloudinary.com/dxchcqxvt/video/upload/v1726029274/3p_details_vigwdz.mov">
-    </section>
-    <footer>
-        <h2>Other works</h2>
-        <div>
-            <a href="./5GHome.html" class="projectOne">
-                <!-- <p>5G Home Self Setup</p> -->
-                
-            </a>
-            <a href="./MVA.html" class="projectFour ">
-                <!-- <p style="color: #000;">My Verizon App</p> -->
-                
-            </a>
-            <a href="./Solar.html" class="projectTwo">
-                <!-- <p>Residential Solar</p> -->
-
-            </a>
     
-            <a href="./Meta1.html" class="projectFive">
-                <!-- <p style="color: #000;">Meta</p> -->
-                
-            </a>
-            <a href="./aware.html" class="projectSix">
-                <!-- <p style="color: #000;">Meta</p> -->
-                
-            </a>
+    <section id="anchorFive">
+        <h2>Learnings & Next Steps</h2>
+        <p><strong>Data-Driven Insights Inform Impactful Changes:</strong> <br> Leveraging user behavior data to prioritize pain points in the migration process allowed targeted improvements that maximized efficiency and satisfaction.</p><br>
+
+        <p><strong>Cross-Functional Collaboration Accelerates Progress:</strong> <br> Partnering with engineering, product, and data science teams ensured that solutions were both technically feasible and aligned with user needs, showing the power of cross-disciplinary teamwork.</p><br>
+        <p><strong>Incremental Improvements Compound Over Time:</strong> <br> Breaking down the migration process into smaller, iterative enhancements proved to be a sustainable approach, highlighting the value of continuous optimization over big-bang changes.</p><br>
+
+       
+        <p><strong>Develop Post-Migration Onboarding:</strong> <br> Create a seamless onboarding experience after migration, with tailored tutorials or resources to help users quickly adapt to the managed accounts system.</p><br>
+        <p><strong>Analyze Long-Term Impact on Retention:</strong> <br> Measure how migration improvements affect long-term user retention and satisfaction, using metrics like adoption rates and feedback scores to validate ongoing success.</p><br>
+        <p><strong>Create Scalable Documentation and Tools:</strong> <br> Develop reusable documentation, templates, or tools to make future migrations easier and more consistent across various account types or use cases.</p><br>
+
+
+    </section>
+    
+  
+
+    <footer style="background-color: #28403A; padding: 40px 0px; text-align: left; ">
+        <h2 style="color: #fff;   padding: 0px var(--uniPadding);"> More Projects</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: left; gap: 20px; margin-top:  32px;">
+          <a href="./Meta1.html" style="text-decoration: none; background-color: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 8px; width: 220px; height: 60px; color: #fff; transition: transform 0.3s ease, background-color 0.3s ease;">
+            <h4 style="margin: 0; font-size: 18px; font-weight: 400; text-align: left;">Managed Meta Accounts</h4>
+            <p style="margin: 20px 0 0; font-size: 14px; text-align: left;">Enterprise access & tools.</p>
+          </a>
+          <a href="./MVA.html" style="text-decoration: none; background-color: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 8px;  width: 220px; height: 60px;  color: #fff; transition: transform 0.3s ease, background-color 0.3s ease;">
+            <h4 style="margin: 0; font-size: 18px; font-weight: 400; text-align: left;">My Verizon App</h4>
+            <p style="margin: 20px 0 0; font-size: 14px; text-align: left;">Optimizing the shop experience.</p>
+          </a>
+          <a href="./Solar.html" style="text-decoration: none; background-color: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 8px;  width: 220px; height: 60px;  color: #fff; transition: transform 0.3s ease, background-color 0.3s ease;">
+            <h4 style="margin: 0; font-size: 18px; font-weight: 400; text-align: left;">Residential Solar</h4>
+            <p style="margin: 20px 0 0; font-size: 14px; text-align: left;">Simplifying solar installation.</p>
+          </a>
+          <a href="./5GHome.html" style="text-decoration: none; background-color: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 8px;  width: 220px; height: 60px;  color: #fff; transition: transform 0.3s ease, background-color 0.3s ease;">
+            <h4 style="margin: 0; font-size: 18px; font-weight: 400; text-align: left;">5G Home Setup</h4>
+            <p style="margin: 20px 0 0; font-size: 14px; text-align: left;">Self-setup for 5G routers.</p>
+          </a>
         </div>
-    </footer>
+      </footer>
+      
 
-    <!-- <button class="ghost" ID="scrollTop"> Back to top</button> -->
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js'></script>
-    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js'></script>
-    <script src="./project.js"></script>
+   <script src="./project.js"></script>
     <script>
         // Fade-in effect for the body content
         window.addEventListener('load', () => {

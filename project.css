@@ -1,62 +1,7 @@
-#passArea{
-    display: grid;
-    grid-template-columns: 0fr 0fr;
-    column-gap: 0;
-    justify-content: center;
-    margin-bottom: 140px;
-
-    
-    
-
-}    
-    #pass {
-        width: 200px;
-        height: 40px;
-        font-size: 30px;
-        border: var(--darkGreen) 2px solid;
-        
-    }
-
-    .notifyText {
-        grid-column: span 2;
-        font-size: 24px;
-    visibility: hidden;
-
-    }
-    
 
 
-    #submitPass {
-        position: relative;
-        top: 0;
-        right: 0;
-        z-index: 2;
-        font-size: 14px;
-        font-weight: 700;
-        color:white;
-        height: 44px;
-        width: 100px;    
-        background-color:var(--darkGreen);
-        box-shadow: none;
-        border-color: none;
-        
+
   
-  
-    }
-
-    button{
-        border: none;
-        background-color:none ;
-    }
-    #submitPass:hover{
-         text-decoration: underline;
-    }
-
-input:focus-visible {
-    outline: none;
-    box-shadow: none;
-  }
-/* end locked pages CSS */
 
 * {
     margin: 0;
@@ -66,20 +11,19 @@ input:focus-visible {
 
 :root {
     --darkGreen: #28403A;
-    /* --uniPadding: 120px; */
-    --uniPadding: calc(3/12 * 100%);
-    --line-spacing: calc(3/12*100%); /* Distance between lines */
+    
+    --uniPadding: calc(2/12 * 100%);
+    --line-spacing: calc(2/12*100%); /* Distance between lines */
     --line-width: 1px;   /* Width of the grid lines */
     --line-color: #ccc;  /* Color of the grid lines */
 }
+
 header{
-    height: 60px;
-    background-color: var(--lightGreen);
+    
     padding: 0 var(--uniPadding) 0;
-    padding-top: 30px;
     font-weight: 500;
     font-size: 30px;
-    /* line-height: 47px; */
+    
     color: var(--darkGreen);
 
 
@@ -87,12 +31,12 @@ header{
 
 header a{
     text-decoration:none; 
-    color: var(--darkGreen);
+    color: white;
 
 }
 header a:visited{
     text-decoration:none; 
-    color: var(--darkGreen);
+    
 
 }
 
@@ -100,15 +44,23 @@ header a:visited{
 
 section{
     padding: 0 var(--uniPadding) 0;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
 }
 
+section img{
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.06);
+}
+.noShadow{ 
+    box-shadow:  none;
+}
 .fullLength{
     padding: 48px calc(1/12 * 100%);
     background-color: #F7F7F7; 
 }
 .fullLength h2{
-    text-align: center;
+    text-align: center!important;
+    padding-top: 60px !important;
+
 }
 
 h1 {
@@ -121,11 +73,11 @@ h1 {
     line-height: 60px;
     letter-spacing: -0.25px;
     font-size: 57px;
-    margin-bottom: 32px;
+    
 }
 
 h2 {
-
+    text-transform: capitalize;
     color:var(--darkGreen);
     font-family: "EB Garamond", serif;
     text-align: left;
@@ -379,24 +331,12 @@ footer a:hover{
 
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 768px) {
     :root {
         --uniPadding:30px;
     }
 
 
-    header{
-        height: 85px;
-        background-color: var(--lightGreen);
-        padding: 0 var(--uniPadding) 0;
-        padding-top: 30px;
-        font-weight: 500;
-        font-size: 30px;
-        /* line-height: 47px; */
-        color: var(--darkGreen);
-    
-    
-    }
 
     section {
         margin-bottom: 60px;

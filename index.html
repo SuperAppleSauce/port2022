@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Spline+Sans:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chevron_right" />
     <title>Alexis Trevizo</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="landing.css" rel="stylesheet" type="text/css">
-
+    <!-- <link href="landing.css" rel="stylesheet" type="text/css"> -->
     <style>
-       
-        :root {
+
+*{
+    margin: 0 ;
+    padding: 0;
+}
+body{
+    padding-bottom: 60px;
+}
+:root {
+
             --line-color: #fff; /* Default line color */
             --line-spacing: calc(1/12 * 100%); /* Default spacing between lines */
             --darkGreen: #28403A;
+            --uniPadding: calc(1/12 * 100%);
+            --uniBorderRad:3px
         }
-        body{
-            background-color: var(--darkGreen); /* White background */
-        }
-        /* Grid Loading Animation Styles */
+        /* lines Loading Animation Styles */
         .grid-container {
             position: fixed;
             top: 0;
@@ -27,8 +35,8 @@
             width: 100%;
             height: 100%;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content:left;
+            align-items: left;
             opacity: 1;
             visibility: visible;
             transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
@@ -76,142 +84,321 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
-    
+
             position: relative;
-            text-align: center;
-            background-color: var(--darkGreen);
+            text-align: left;
+            /* background-color: var(--darkGreen); */
         }
 
         .show-content {
             opacity: 1;
             visibility: visible;
+            /* background-color: var(--darkGreen); */
+        }
+    
+
+        .placeholder {
+            margin-bottom: 50px;
+            height: 30vw;
             background-color: var(--darkGreen);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            justify-content: center;
+            align-items: center;
+            color: white;
+           
+        }
+        .placeholder h1{
+            font-family: "EB Garamond", serif;
+    
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 60px;
+    letter-spacing: -0.25px;
+    font-size: 72px;
+
+        }
+
+        .placeholder p{
+            font-family: "Spline Sans", sans-serif;
+            font-size: 32px;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+            text-align: center;
+        }
+
+        .container {
+        
+            padding: 12.5px var(--uniPadding);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 24px;
+            
+        }
+
+        a {
+            text-decoration: none; /* Remove text decoration */
+        }
+
+        .section {
+          width: 37%;
+          height: 475px;
+          border: solid 0.5px #00000009;
+            border-radius: var(--uniBorderRad);
+            background: linear-gradient(145deg, rgba(1, 50, 1, 0.047), rgba(55, 73, 55, 0.1));
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+            padding: 24px;
+            opacity: 0; /* Initially hidden */
+            transform: scale(1.2);
+            filter: blur(10px); /* Start with blur */
+            transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease, background 0.5s ease; /* Smooth transition */
+            cursor: pointer; /* Make entire card clickable */
+        }
+
+        .section.show {
+            opacity: 1; /* Become visible */
+            transform: scale(1); /* Scale down to normal size */
+            filter: blur(0); /* Clear the blur */
+        }
+
+     
+        .section h2 {
+            margin: 0;
+            font-size: 19px;
+            color: #333;
+            display: inline-flex;
+            align-items: center;
+            align-content: center;
+            gap: 12px; /* Space between title and button */
+        }
+
+        .section p {
+            font-family: "Spline Sans", sans-serif;
+            margin: 8px 0;
+            color: #555;
+            font-size: 18px;
+        }
+
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--uniBorderRad);
+            margin-top: 16px;
+        }
+
+        /* Make the 2nd and 3rd sections narrower */
+        .section.smaller {
+            flex-grow: 2;
+            width: 40%;
+            min-height: 300px; /* Slightly shorter height */
+        }
+
+    
+
+        
+        /* Button styles */
+        button {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 3px;
+            background-color: #00000027;
+            color: #333;
+            border: solid 0.5px #00000024;
+            border-radius: 100px;
+            cursor: pointer;
+            transition:  0.5s ease;
+        }
+    
+    
+        .material-symbols-outlined{
+        font-size: 20px;
+        line-height: 1;
+    }
+
+        /* Hover effect for button and synchronization */
+        .section:hover button {
+            margin-left: 6px;
+        
+        }
+
+        /* Gradient change on hover */
+        .section:hover {
+            background: linear-gradient(145deg, rgba(1, 50, 1, 0.2), rgba(55, 73, 55, 0.2));
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .placeholder{
+                text-align: center;
+            }
+          
+            .section {
+                width: 100%;
+                min-height: 200px; /* Adjust height for mobile */
+            }
+      
         }
     </style>
 </head>
 <body>
-    <!-- Grid Loading Animation -->
-    <div id="grid-container" class="grid-container">
-        <!-- Create vertical lines based on spacing variable -->
-        <div class="vertical-line" style="left: var(--line-spacing); animation-delay: 0s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 2); animation-delay: 0.1s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 3); animation-delay: 0.2s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 4); animation-delay: 0.3s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 5); animation-delay: 0.4s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 6); animation-delay: 0.5s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 7); animation-delay: 0.6s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 8); animation-delay: 0.7s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 9); animation-delay: 0.8s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 10); animation-delay: 0.9s;"></div>
-        <div class="vertical-line" style="left: calc(var(--line-spacing) * 11); animation-delay: 1.0s;"></div>
+ <!-- Grid Loading Animation -->
+ <div id="grid-container" class="grid-container">
+    <!-- Create vertical lines based on spacing variable -->
+    <div class="vertical-line" style="left: var(--line-spacing); animation-delay: 0s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 2); animation-delay: 0.1s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 3); animation-delay: 0.2s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 4); animation-delay: 0.3s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 5); animation-delay: 0.4s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 6); animation-delay: 0.5s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 7); animation-delay: 0.6s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 8); animation-delay: 0.7s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 9); animation-delay: 0.8s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 10); animation-delay: 0.9s;"></div>
+    <div class="vertical-line" style="left: calc(var(--line-spacing) * 11); animation-delay: 1.0s;"></div>
 
-        <!-- Create horizontal lines based on spacing variable -->
-        <div class="horizontal-line" style="top: var(--line-spacing); animation-delay: 0s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 2); animation-delay: 0.1s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 3); animation-delay: 0.2s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 4); animation-delay: 0.3s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 5); animation-delay: 0.4s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 6); animation-delay: 0.5s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 7); animation-delay: 0.6s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 8); animation-delay: 0.7s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 9); animation-delay: 0.8s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 10); animation-delay: 0.9s;"></div>
-        <div class="horizontal-line" style="top: calc(var(--line-spacing) * 11); animation-delay: 1.0s;"></div>
+    <!-- Create horizontal lines based on spacing variable -->
+    <div class="horizontal-line" style="top: var(--line-spacing); animation-delay: 0s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 2); animation-delay: 0.1s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 3); animation-delay: 0.2s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 4); animation-delay: 0.3s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 5); animation-delay: 0.4s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 6); animation-delay: 0.5s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 7); animation-delay: 0.6s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 8); animation-delay: 0.7s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 9); animation-delay: 0.8s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 10); animation-delay: 0.9s;"></div>
+    <div class="horizontal-line" style="top: calc(var(--line-spacing) * 11); animation-delay: 1.0s;"></div>
 
+</div>
+
+<div class="content">
+    <div class="placeholder"><h1>Alexis Trevizo</h1>
+        <p>Designer & Strategist Driving Innovation in Enterprise & Consumer Products. </p></div>
+    <div class="container">
+        <a href="./Meta1.html" class="section">
+            <h2>
+                Managed Meta Accounts
+                <button><span class="material-symbols-outlined">
+                    chevron_right
+                    </span></button>
+            </h2>
+            <p>Enterprise access, dev tools, & business account management.</p>
+            <img src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737501846/Meta_cover_ijpsva.png" alt="">
+        </a>
+        <a href="./MVA.html" class="section smaller">
+            <h2>
+                My Verizon App
+                <button><span class="material-symbols-outlined">
+                    chevron_right
+                    </span></button>
+            </h2>
+            <p>Re-architecting & optimizing shop.</p>
+            <img src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737501847/MVA_cover_cc9tb0.png" alt="">
+            
+        </a>
     </div>
-
-    <!-- Main Content -->
-    <div class="content">
-        <div class="banner">
-            <div class="landingHeadline">
-                <h1>Alexis Trevizo</h1>
-                <p>Designer & strategist focused on creating intuitive solutions for enterprises</p>  
-                   
-            </div>
-          
-            <!-- <h3 class="moreScroll"> Scroll for more</h3>   -->
-            <!-- <div class="arrow"></div> -->
+        <div class="container">
+        <a href="./Solar.html" class="section smaller">
+            <h2>
+                Residential Solar
+                <button><span class="material-symbols-outlined">
+                    chevron_right
+                    </span></button>
+            </h2>
+            <p>Simplifying the solar installation pipeline & enhancing the ownership experience</p>
+            <img src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737501846/Solar_cover_qio7f9.png" alt="">
+        </a>
    
-        </div>
-        <div class="works">
-            <div class="projectContainer">
-                <a href="./Meta1.html" class="projectTitle">
-                    <h2>Managed Meta Accounts</h2>
-                    <p>Enterprise access, dev tools, & business account management </p>
-                </a>
-                <a href="./Meta1.html"  class="projectFive projectImage"></a>
-            </div>
-            <div class="projectContainer">
-                <a href="./5GHome.html" class="projectTitle">
-                    <h2>5G Home Self Setup</h2>
-                    <p>A new way to setup your 5G router </p>
-                </a>
-                <a href="./5GHome.html" class="projectOne projectImage"></a>
-            </div>
-            <div class="projectContainer">
-                <a href="./Solar.html" class="projectTitle">
-                    <h2>Residential Solar</h2>
-                    <p>Simplifying the solar installation pipeline & enhancing the ownership experience </p>
-                </a>
-                <a href="./Solar.html" class="projectTwo projectImage"></a>
-            </div>
-            <div class="projectContainer">
-                
-                <a href="./MVA.html" class="projectTitle">
-                    <h2>My Verizon App </h2>
-                    <p>Re-architecting & optimizing shop </p>
-                </a>
-                <a href="./MVA.html" class="projectFour projectImage"></a>
-             
-            </div>
-            <div class="projectContainer">
-                
-                <a href="./aware.html" class="projectTitle">
-                    <h2>Awarehealth </h2>
-                    <p>A mental wellness app for lawyers which focuses on community building and AI guided resilience training</p>
-                </a>
-                <a href="./aware.html" class="projectSix projectImage"></a>
-             
-            </div>
-        </div>
+        <a href="./5GHome.html" class="section ">
+            <h2>
+                5G Home Self Setup
+                <button><span class="material-symbols-outlined">
+                    chevron_right
+                    </span></button>
+            </h2>
+            <p>A new way to setup your 5G router.</p>
+            <img src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737503170/5Ghome_cover_r8ekid.png" alt="">
+        </a>
     </div>
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js'></script>
-    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js'></script>
-    <script src="./index.js"></script>
-
-    <script>
-        window.addEventListener('load', () => {
-            const grid = document.getElementById('grid-container');
-            const content = document.querySelector('.content');
-            
-            // Fade in the grid-container
-            grid.style.opacity = '1';
-            grid.style.visibility = 'visible';
-            
-            // Show the main content after the grid animation is complete
-            setTimeout(() => {
-                grid.style.opacity = '0';
-                grid.style.visibility = 'hidden';
+    <!-- <div class="container">
+        <a href="./Solar.html" class="section ">
+            <h2>
+                Residential Solar
+                <button><span class="material-symbols-outlined">
+                    chevron_right
+                    </span></button>
+            </h2>
+            <p>Simplifying the solar installation pipeline & enhancing the ownership experience</p>
+            <img src="https://placecats.com/300/200" alt="">
+        </a>
+        <a href="./MVA.html" class="section smaller">
+            <h2>
+                My Verizon App
+                <button><span class="material-symbols-outlined">
+                    chevron_right
+                    </span></button>
                 
-                // Show the main content with a cross-fade effect
-                setTimeout(() => {
-                    content.classList.add('show-content');
-                }, 500); // Delay to match the grid fade-out
-            }, 1500); // Delay to ensure all content is fully loaded
+            </h2>
+            <p>Re-architecting & optimizing shop.</p>
+            <img src="https://placecats.com/300/200" alt="">
+        </a>
+    </div> -->
+
+</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                        }
+                    });
+                },
+                { threshold: 0.4 } 
+            );
+
+            document.querySelectorAll(".section").forEach((section) => {
+                observer.observe(section);
+            });
         });
     </script>
-    <script>
-        window.onload = function() {
-  var splineElement = document.querySelectorAll('spline-viewer');
-  
-  for (let pas = 0; pas < splineElement.length; pas++) {
-    var shadowRoot = splineElement[pas].shadowRoot;
-    shadowRoot.querySelector('#logo').remove();
-  }
-}
-    </script>
+     <!-- <script src="./index.js"></script> -->
+
+     <script>
+         window.addEventListener('load', () => {
+             const grid = document.getElementById('grid-container');
+             const content = document.querySelector('.content');
+             
+             // Fade in the grid-container
+             grid.style.opacity = '1';
+             grid.style.visibility = 'visible';
+             
+             // Show the main content after the grid animation is complete
+             setTimeout(() => {
+                 grid.style.opacity = '0';
+                 grid.style.visibility = 'hidden';
+                 
+                 // Show the main content with a cross-fade effect
+                 setTimeout(() => {
+                     content.classList.add('show-content');
+                 }, 500); // Delay to match the grid fade-out
+             }, 1500); // Delay to ensure all content is fully loaded
+         });
+     </script>
+     <script>
+         window.onload = function() {
+   var splineElement = document.querySelectorAll('spline-viewer');
+   
+   for (let pas = 0; pas < splineElement.length; pas++) {
+     var shadowRoot = splineElement[pas].shadowRoot;
+     shadowRoot.querySelector('#logo').remove();
+   }
+ }
+</script>
 </body>
 </html>

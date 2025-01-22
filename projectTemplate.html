@@ -18,25 +18,174 @@
         body.loaded {
             opacity: 1;
         }
+
+        header {
+            z-index: 200;
+            background-color: var(--darkGreen);
+            padding: 24px var(--uniPadding) ;
+
+        }
+        header .moreProjects{
+            color: white;
+            float:right;
+            font-family: "Spline Sans", sans-serif ;
+            border: var(--darkGreen) 0.5px solid;
+            padding: 6px 12px;
+            text-align: left;
+            font-optical-sizing: auto;
+            font-weight: 350;
+            font-style: normal;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        header .moreProjects:hover{
+            border: white 0.5px solid;
+            padding: 6px 12px;
+            transition: color 0.3s;
+
+        
+        }
+
+        .title-section{
+            padding: 30px var(--uniPadding);
+
+        }
+
+        .breadcrumbs {
+            position: sticky;
+            top: 0;
+            /* background-color: white; */
+            padding: 24px 0px 9px 0px;
+            /* border-bottom: 2px solid #ddd; */
+            
+            margin: 0 var(--uniPadding);
+            margin-bottom: 60px;
+            z-index: 200;
+            overflow-x: auto;
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .breadcrumbs ul {
+            justify-content: center;
+            list-style: none;
+            padding: 12px 12px;
+            /* height: auto; */
+            display: flex;
+            gap: 6px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.5), rgba(249, 249, 249, 0.5));
+            border: solid 0.5px #00000009;
+            backdrop-filter: blur(20px);
+        }
+
+        .breadcrumbs ul li {
+            font-family: "Spline Sans", sans-serif ;
+            font-size: 14px;
+            /* padding: 6px 12px; */
+        }
+
+        .breadcrumbs ul li a {
+            border: solid 0.5px #ffffff09;
+            text-decoration: none;
+            color: var(--darkGreen);
+            padding: 6px 12px;
+            transition: color 0.3s;
+            font-family: "Spline Sans", sans-serif ;
+        
+        }
+
+        .breadcrumbs ul li a:hover, .breadcrumbs ul li a.active {
+            /* color: white; */
+            /* border-bottom: 3px solid var(--darkGreen);; */
+            /* background-color: var(--darkGreen); */
+            /* border-radius: 3px; */
+            color:white;
+            border: solid 0.5px #00000009;
+            border-radius: var(--uniBorderRad);
+            background:  var(--darkGreen)
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01); */
+            /* padding: 24px; */
+        }
+ 
+    
+        section h2 {
+            margin-top: 0;
+        }
+
+  
+
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 32px;
+            right: var(--uniPadding);
+            background-color: var(--darkGreen);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            /* border-radius: 5px; */
+            cursor: pointer;
+            font-size: 14px;
+            z-index: 200;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 769px) {
+            .breadcrumbs {
+                display: block;
+            }
+
+            .back-to-top {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumbs {
+                display: none;
+            }
+
+            .back-to-top {
+                display: block;
+            }
+            header {
+                position: sticky;
+                top: 0;
+                padding: 20px;
+
+        }
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="./index.html"> &#x27F5;  </a>
+        <a href="./index.html"> Alexis Trevizo </a>
+        <a class="moreProjects" href="./index.html"> More projects </a>
     </header>
 
     <div id="shadowbox" class="shadowbox">
         <span class="close">&times;</span>
         <img class="shadowbox-content" id="shadowbox-img">
     </div>
-    
-    <section>
-        <h1>My Verizon App</h1>
-        <img class="thumbnail" src="https://placehold.co/600x400" >
-    </section>
+    <div class="breadcrumbs">
+        <ul>
+        
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#my-role">My Role</a></li> 
+            <li><a href="#problem">Problem Breakdown</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#design">Design Approach</a></li>
+            <li><a href="#results">Results</a></li>
+        </ul>
+    </div>
+    <div id="title" class="title-section">
+        <h1>Title</h2>
+        <!-- <p>Welcome to my design project page.</p> -->
+    </div>
 
 <!-- Single paragraph -->
-    <section>
+    <section id="summary">
         <h2>Context</h2>
         <p>Verizon customers were struggling to find the products. My team and I set out to
             update & simplify the My Verizon App information architecture. I was focused on revamping the IA for the shop experience nable easy navigation &
@@ -71,7 +220,7 @@
                     enable easy navigation & promote the discovery of new products.</p>
             </div>
             <div class="duoContentR">
-                <img class="textImage thumbnail" src="./frame1.png">
+                <img class="textImage thumbnail" src="./frame1.png" >
                 <h3>Lorem, ipsum.</h3>
             </div>
         </div>
@@ -96,12 +245,12 @@
     </section>
 
 <!-- fullLength with grey -->
-    <section class="fullLength">
+    <!-- <section class="fullLength" id="results"></section>
         <h2>Lorem, ipsum dolor.</h2>
-        <img class="thumbnail" src="./frame1.png">
-    </section>
+        <img class="thumbnail" src="https://placehold.co/600x400">
+    </section> -->
 
-    <footer>
+    <!-- <footer>
         <h2>Other works</h2>
         <div>
             <a href="#"></a>
@@ -111,14 +260,8 @@
             <a href="#"></a>
             <a href="#"></a>
         </div>
-    </footer>
+    </footer> -->
 
-    <!-- <button class="ghost" ID="scrollTop"> Back to top</button> -->
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js'></script>
-    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js'></script>
     <script src="./project.js"></script>
     <script>
         // Fade-in effect for the body content
