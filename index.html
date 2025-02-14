@@ -24,6 +24,7 @@ body{
             --line-color: #fff; /* Default line color */
             --line-spacing: calc(1/12 * 100%); /* Default spacing between lines */
             --darkGreen: #28403A;
+            --lightB: #FAF8F5;
             --uniPadding: calc(1/12 * 100%);
             --uniBorderRad:3px
         }
@@ -79,12 +80,96 @@ body{
             }
         }
 
+
+           /* header */
+
+
+           header {
+            z-index: 200;
+            font-family: "EB Garamond", serif;
+            
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: auto;
+            background-color: white;
+            padding:32px;
+            align-items: center;
+            text-decoration: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--darkGreen);
+    
+           }
+
+/* breadcrumbs */
+.title-section{
+            padding: 30px var(--uniPadding);
+            
+
+        }
+        .breadcrumbs {
+
+            
+            
+            padding: 24px 0px 9px 0px;
+            margin-top: 50px ;
+            /* margin-bottom: 60px; */
+            z-index: 200;
+            overflow-x: auto;
+            white-space: nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .breadcrumbs ul {
+            justify-content: center;
+            list-style: none;
+            padding: 12px 12px;
+            /* height: auto; */
+            display: flex;
+            gap: 6px;
+            /* background: rgba(229, 229, 229, 0.50);
+            border: solid 0.5px #00000038; */
+            backdrop-filter: blur(60px);
+        }
+
+        .breadcrumbs ul li {
+            font-family: "Spline Sans", sans-serif ;
+            font-size: 14px;
+            /* padding: 6px 12px; */
+        }
+
+        .breadcrumbs ul li a {
+            border: solid 0.5px #ffffff09;
+            text-decoration: none;
+            color: var(--darkGreen);
+            padding: 6px 12px;
+            transition: color 0.3s;
+            font-family: "Spline Sans", sans-serif ;
+        
+        }
+
+        .breadcrumbs ul li a:hover, .breadcrumbs ul li a.active {
+            /* color: white; */
+            /* border-bottom: 3px solid var(--darkGreen);; */
+            /* background-color: var(--darkGreen); */
+            /* border-radius: 3px; */
+            color:white;
+            border: solid 0.5px #00000009;
+            border-radius: var(--uniBorderRad);
+            background:  var(--darkGreen)
+            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01); */
+            /* padding: 24px; */
+        }
+
+     
         /* Main Content Styles */
         .content {
             opacity: 0;
             visibility: hidden;
             transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
-
             position: relative;
             text-align: left;
             /* background-color: var(--darkGreen); */
@@ -98,40 +183,76 @@ body{
     
 
         .placeholder {
-            margin-bottom: 50px;
-            height: 30vw;
-            background-color: var(--darkGreen);
+            padding: 3px var(--uniPadding);
+        
+            height: 40vw;
+            background-color: white;
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 50px;
             justify-content: center;
             align-items: center;
-            color: white;
+        
            
         }
-        .placeholder h1{
-            font-family: "EB Garamond", serif;
-    
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 60px;
-    letter-spacing: -0.25px;
-    font-size: 72px;
-
-        }
+ 
 
         .placeholder p{
             font-family: "Spline Sans", sans-serif;
-            font-size: 32px;
+            font-size: 86px;
+             font-size: 4.5vw; 
+    
+            line-height: auto;
             font-optical-sizing: auto;
             font-weight: 200;
             font-style: normal;
             text-align: center;
+            color: #202124;
+            color: var(--darkGreen);
+        }
+
+        h2{
+            font-family: "EB Garamond", serif;
+            /* font-family: "Spline Sans", sans-serif; */
+            font-size: 28px;
+            font-weight: 200;
+            padding: 12.5px var(--uniPadding);
+            color:var(--darkGreen);
+            line-height: auto;
+            font-optical-sizing: auto;
+            margin-top: 50px;
+            color: var(--darkGreen);
+
+
+        }
+        h3 {
+            font-family: "EB Garamond", serif;
+            /* font-family: "Spline Sans", sans-serif; */
+            font-weight: 200;
+            margin: 0;
+            margin-bottom: 8px;
+            font-size: 24px;
+            line-height: auto;
+            font-optical-sizing: auto;
+            color: var(--darkGreen);
+            
+        
+        }
+
+        h4{
+            font-family: "Spline Sans", sans-serif;
+            margin-bottom: 24px;
+            font-weight: 200;
+            font-size: 12px;
+            line-height: auto;
+            font-optical-sizing: auto;
+
+            color: #202124;
+
+
         }
 
         .container {
-        
             padding: 12.5px var(--uniPadding);
             display: flex;
             flex-wrap: wrap;
@@ -142,51 +263,91 @@ body{
 
         a {
             text-decoration: none; /* Remove text decoration */
+            color: var(--darkGreen);
+        
         }
+        a:visited {
+            color: var(--darkGreen);
 
-        .section {
-          width: 37%;
-          height: 475px;
-          border: solid 0.5px #00000009;
-            border-radius: var(--uniBorderRad);
-            background: linear-gradient(145deg, rgba(1, 50, 1, 0.047), rgba(55, 73, 55, 0.1));
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
-            padding: 24px;
+        }
+        .animate-on-scroll{
+
             opacity: 0; /* Initially hidden */
             transform: scale(1.2);
             filter: blur(10px); /* Start with blur */
-            transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease, background 0.5s ease; /* Smooth transition */
-            cursor: pointer; /* Make entire card clickable */
+            transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease; /* Smooth transition */
         }
 
-        .section.show {
+        .animate-on-scroll.show{
             opacity: 1; /* Become visible */
             transform: scale(1); /* Scale down to normal size */
             filter: blur(0); /* Clear the blur */
         }
 
-     
-        .section h2 {
-            margin: 0;
-            margin-bottom: 8px;
-            font-size: 24px;
-            color: #555555;
-            display: inline-flex;
-            align-items: center;
-            align-content: center;
-            gap: 12px; /* Space between title and button */
+        .section {
+          width: 37vw;
+          height: 21vw;
+          
+
+          border: solid 0.5px #00000029;
+            border-radius: var(--uniBorderRad);
+            background: var(--lightB);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+            padding: 24px;
+        
+            cursor: pointer; /* Make entire card clickable */
+            overflow:hidden ;
         }
 
-        .section p {
+     
+        .lectures {
+            /* margin-bottom: 24px; */
+          width: 100%;
+          height: auto;
+          border: solid 0.5px #00000029;
+          padding: 3px var(--uniPadding);
+            border-radius: var(--uniBorderRad);
+            background: white;
+            /* background: var(--lightB); */
+            padding: 24px;
+            /* opacity: 0;  */
+            /* transform: scale(1.2); */
+            /* filter: blur(10px);  */
+            transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease; /* Smooth transition */
+            overflow:hidden ;
+        }
+    
+        .about {
+            /* margin-bottom: 24px; */
+          width: 100%;
+          height: auto;
+          border: solid 0.5px #00000029;
+          padding: 3px var(--uniPadding);
+            border-radius: var(--uniBorderRad);
+            /* background: white; */
+            background: var(--lightB);
+            padding: 24px;
+            /* opacity: 0;  */
+            /* transform: scale(1.2); */
+            /* filter: blur(10px);  */
+            transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease; /* Smooth transition */
+            overflow:hidden ;
+        }
+
+        .about p, .lectures p {
             font-family: "Spline Sans", sans-serif;
-            margin: 8px 0;
+            font-size: 16px;
+            line-height: 24px;
+            /* margin: 8px 0; */
             color: #555;
-            font-size: 18px;
+    
         }
 
         .section img {
             width: 100%;
+            /* max-width: 500px; */
             height: auto;
+            /* max-height: 300px; */
             border-radius: var(--uniBorderRad);
             margin-top: 16px;
         }
@@ -197,6 +358,11 @@ body{
             width: 40%;
             min-height: 300px; /* Slightly shorter height */
         }
+               /* Gradient change on hover */
+               .section:hover {
+            background: linear-gradient(145deg,#faf1e4d2,#f9ecda);
+        }
+
 
     
 
@@ -227,11 +393,7 @@ body{
         
         }
 
-        /* Gradient change on hover */
-        .section:hover {
-            background: linear-gradient(145deg, rgba(1, 50, 1, 0.2), rgba(55, 73, 55, 0.2));
-        }
-
+ 
         /* Responsive styling */
         @media (max-width: 768px) {
             .placeholder{
@@ -239,7 +401,8 @@ body{
                 height: 500px;
             }
             .placeholder p{
-                font-size: medium;
+                font-size: 42px;
+                font-size: 5.5vw;
             }
             .section {
                 width: 100%;
@@ -284,99 +447,132 @@ body{
 
 </div>
 
-<div class="content">
-    <div class="placeholder"><h1>Alexis Trevizo</h1>
-        <p>Shaping Scalable Products & Strategies for Growth</p></div>
+
+    <header>
+        <p> Alexis Trevizo </p>
+
+    </header>
+
+    <div class="placeholder">
+        <!-- <p>Product Designer</p> -->
+        <p>Design for Enterprise & Consumer Products. Billions in Revenue, Millions Served.</p>
+        <div class="breadcrumbs animate-on-scroll">
+            <ul>
+                <li><a href="#anchorOne">Work</a></li>
+                <li><a href="#anchorTwo">Lectures</a></li>
+                <li><a href="#anchorThree">About</a></li>
+        
+            </ul>
+        </div>
+    </div>
+
+       
+
+        <!-- Start work -->
+        <h2 id="anchorOne" class="animate-on-scroll">Work </h2>
     <div class="container">
-        <a href="./Meta1.html" class="section">
-            <h2>
+        <a href="./Meta1.html" class="section smaller animate-on-scroll">
+            <h3>
                Unlocking Revenue: Third-Party Tools for Managed Accounts
-                <button><span class="material-symbols-outlined">
-                    chevron_right
-                    </span></button>
-            </h2>
+               
+            </h3>
             <!-- <p>Enterprise access, dev tools, & asset management.</p> -->
             <img src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737501846/Meta_cover_ijpsva.png" alt="">
         </a>
-        <a href="./MVA.html" class="section smaller">
-            <h2>
+        <a href="./MVA.html" class="section smaller animate-on-scroll">
+            <h3>
                 Helping Millions Shop Smarter: Simplifying Product Discovery
-                <button><span class="material-symbols-outlined">
-                    chevron_right
-                    </span></button>
-            </h2>
+        
+            </h3>
             <!-- <p>Re-architecting & optimizing shop.</p> -->
             <img src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737501847/MVA_cover_cc9tb0.png" alt="">
             
         </a>
-    </div>
-        <div class="container">
-        <a href="./Solar.html" class="section smaller">
-            <h2>
+    
+
+        <a href="./Solar.html" class="section smaller animate-on-scroll">
+            <h3>
                 From Data to Decisions: Helping Users Optimize Their Solar Energy Usage
-                <button><span class="material-symbols-outlined">
-                    chevron_right
-                    </span></button>
-            </h2>
-            <!-- <p>Simplifying the solar installation pipeline & enhancing the ownership experience</p> -->
+            </h3>
+            <!-- <p>Re-architecting & optimizing shop.</p> -->
             <img src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737501846/Solar_cover_qio7f9.png" alt="">
         </a>
    
-        <a href="./5GHome.html" class="section ">
-            <h2>
+        <a href="./5GHome.html" class="section smaller animate-on-scroll">
+            <h3>
                 No App, No Problem: 5G Home Setup 
-                <button><span class="material-symbols-outlined">
-                    chevron_right
-                    </span></button>
-            </h2>
+         
+            </h3>
             <!-- <p>A new way to setup your 5G router.</p> -->
             <img src="https://res.cloudinary.com/dxchcqxvt/image/upload/v1737503170/5Ghome_cover_r8ekid.png" alt="">
         </a>
     </div>
-    <!-- <div class="container">
-        <a href="./Solar.html" class="section ">
-            <h2>
-                Residential Solar
-                <button><span class="material-symbols-outlined">
-                    chevron_right
-                    </span></button>
-            </h2>
-            <p>Simplifying the solar installation pipeline & enhancing the ownership experience</p>
-            <img src="https://placecats.com/300/200" alt="">
-        </a>
-        <a href="./MVA.html" class="section smaller">
-            <h2>
-                My Verizon App
-                <button><span class="material-symbols-outlined">
-                    chevron_right
-                    </span></button>
-                
-            </h2>
-            <p>Re-architecting & optimizing shop.</p>
-            <img src="https://placecats.com/300/200" alt="">
-        </a>
-    </div> -->
+<!-- Start lecutures -->
+<h2 id="anchorTwo" class="animate-on-scroll">Lectures</h2>
 
+<div class="container">
+<div class="lectures animate-on-scroll">
+    <h3>Intro to Design Systems</h3>
+    <h4>Presented to Northwestern CS majors</h4>
+    <p>An overview of design systems, their role in maintaining consistency across digital products, and how engineers can collaborate with designers to build scalable UI components. Covers key principles, real-world examples, and best practices for implementation.</p>
 </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("show");
-                        }
-                    });
-                },
-                { threshold: 0.4 } 
-            );
 
-            document.querySelectorAll(".section").forEach((section) => {
-                observer.observe(section);
-            });
+<div class="lectures animate-on-scroll">
+    <h3>Advanced Prototyping</h3>
+    <h4>Presented to NYU design majors</h4>
+    <p>A deep dive into high-fidelity prototyping techniques, using tools like Figma, Principle, and Framer to create interactive experiences. Discusses the importance of rapid iteration, user testing, and bridging the gap between design and development.</p>
+</div>
+
+<div class="lectures animate-on-scroll">
+    <h3>The Design & Product Management Venn Diagram</h3>
+    <h4>Presented to NYU design majors</h4>
+    <p>Explores the intersection of design and product management, highlighting how designers can think strategically and contribute to business goals. Covers frameworks for collaboration, decision-making, and balancing user needs with business objectives.</p>
+</div>
+
+<div class="lectures animate-on-scroll">
+    <h3>Crafting Design Narratives</h3>
+    <h4>Presented to NYU design majors</h4>
+    <p>Focuses on storytelling in design—how to craft compelling case studies, present design work effectively, and communicate user insights to stakeholders. Emphasizes structure, persuasion, and visual storytelling techniques.</p>
+</div>
+</div>
+ 
+ 
+ <!-- Start about -->
+ <h2 id="anchorThree" class="animate-on-scroll">About Me</h2>
+
+ <div class="container">
+ <div class="about animate-on-scroll">
+     
+
+    <p>I’m a product designer and strategist with a deep passion for creating scalable, intuitive experiences. With a background in designing for millions of users at Meta and Verizon, I specialize in crafting systems that drive engagement, revenue, and user trust. My work has shaped third-party tool management, e-commerce flows, and trust & safety solutions—all while balancing business impact with user needs.</p><br>
+
+        <p> Beyond design, I thrive at the intersection of strategy and execution, influencing product roadmaps and leading cross-functional teams to bring bold ideas to life. Whether it's refining onboarding experiences, optimizing complex information architectures, or building interactive prototypes that push technical boundaries, I believe in progress before perfection—a mindset shaped by my time at Meta and my own ventures.</p><br>
+        
+            <p>  When I’m not designing, you can find me traveling the world, and chasing waves in remote surf spots.</p><br>
+        
+        <p>Let’s build something amazing.</p>
+ </div>
+
+<script src="./index.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            },
+            { threshold: 0.4 } 
+        );
+
+        document.querySelectorAll(".animate-on-scroll").forEach((element) => {
+            observer.observe(element);
         });
-    </script>
-     <!-- <script src="./index.js"></script> -->
+    });
+</script>
+  
 
      <script>
          window.addEventListener('load', () => {

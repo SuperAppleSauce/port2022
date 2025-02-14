@@ -40,6 +40,67 @@ header a:visited{
 
 }
 
+
+/* bread */
+.breadcrumbs {
+
+            
+    position: sticky;
+    top: 0;
+    padding: 24px 0px 9px 0px;
+    
+    margin: 0 var(--uniPadding);
+    margin-bottom: 60px;
+    z-index: 200;
+    overflow-x: auto;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadcrumbs ul {
+    justify-content: center;
+    list-style: none;
+    padding: 12px 12px;
+    /* height: auto; */
+    display: flex;
+    gap: 6px;
+     background: rgba(255, 255, 255, 0.5);
+    /* border: solid 0.5px #00000038;  */
+    backdrop-filter: blur(60px);
+}
+
+.breadcrumbs ul li {
+    font-family: "Spline Sans", sans-serif ;
+    font-size: 14px;
+    /* padding: 6px 12px; */
+}
+
+.breadcrumbs ul li a {
+    border: solid 0.5px #ffffff09;
+    text-decoration: none;
+    color: var(--darkGreen);
+    padding: 6px 12px;
+    transition: color 0.3s;
+    font-family: "Spline Sans", sans-serif ;
+
+}
+
+.breadcrumbs ul li a:hover, .breadcrumbs ul li a.active {
+    /* color: white; */
+    /* border-bottom: 3px solid var(--darkGreen);; */
+    /* background-color: var(--darkGreen); */
+    /* border-radius: 3px; */
+    color:white;
+    border: solid 0.5px #00000009;
+    border-radius: var(--uniBorderRad);
+    background:  var(--darkGreen)
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01); */
+    /* padding: 24px; */
+}
+
+
+
 /* start project content */
 
 section{

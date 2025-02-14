@@ -23,6 +23,9 @@
             z-index: 200;
             background-color: var(--darkGreen);
             padding: 24px var(--uniPadding) ;
+               /* justify-content: center;
+            align-items: center;
+            text-align: center; */
 
         }
         header .moreProjects{
@@ -51,60 +54,8 @@
 
         }
 
-        .breadcrumbs {
-            position: sticky;
-            top: 0;
-            padding: 24px 0px 9px 0px;
-            
-            margin: 0 var(--uniPadding);
-            margin-bottom: 60px;
-            z-index: 200;
-            overflow-x: auto;
-            white-space: nowrap;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .breadcrumbs ul {
-            justify-content: center;
-            list-style: none;
-            padding: 12px 12px;
-            /* height: auto; */
-            display: flex;
-            gap: 6px;
-            background: rgba(229, 229, 229, 0.50);
-            border: solid 0.5px #00000038;
-            backdrop-filter: blur(60px);
-        }
 
-        .breadcrumbs ul li {
-            font-family: "Spline Sans", sans-serif ;
-            font-size: 14px;
-            /* padding: 6px 12px; */
-        }
-
-        .breadcrumbs ul li a {
-            border: solid 0.5px #ffffff09;
-            text-decoration: none;
-            color: var(--darkGreen);
-            padding: 6px 12px;
-            transition: color 0.3s;
-            font-family: "Spline Sans", sans-serif ;
-        
-        }
-
-        .breadcrumbs ul li a:hover, .breadcrumbs ul li a.active {
-            /* color: white; */
-            /* border-bottom: 3px solid var(--darkGreen);; */
-            /* background-color: var(--darkGreen); */
-            /* border-radius: 3px; */
-            color:white;
-            border: solid 0.5px #00000009;
-            border-radius: var(--uniBorderRad);
-            background:  var(--darkGreen)
-            /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01); */
-            /* padding: 24px; */
-        }
  
     
         section h2 {
@@ -159,22 +110,14 @@
 <body>
     <header>
         <a href="./index.html"> Alexis Trevizo </a>
-        <a class="moreProjects" href="./index.html"> More projects </a>
+        <a class="moreProjects" href="./index.html"> More projects </a> 
     </header>
 
     <div id="shadowbox" class="shadowbox">
         <span class="close">&times;</span>
         <img class="shadowbox-content" id="shadowbox-img">
     </div>
-    <div class="breadcrumbs">
-        <ul>
-            <li><a href="#anchorOne">The Problem</a></li>
-            <li><a href="#anchorTwo">The Challenge</a></li>
-            <li><a href="#anchorThree">Key Stages</a></li>
-            <li><a href="#anchorFour">Final Design</a></li>
-            <li><a href="#anchorFive">Impact</a></li>
-        </ul>
-    </div>
+  
     <div id="title" class="title-section">
         <h1>From Data to Decisions: Helping Users Optimize Their Solar Array</h2>
         <!-- <p>Welcome to my design project page.</p> -->
@@ -185,7 +128,15 @@
      
         
     </section>
-    
+    <div class="breadcrumbs">
+        <ul>
+            <li><a href="#anchorOne">The Problem</a></li>
+            <li><a href="#anchorTwo">The Challenge</a></li>
+            <li><a href="#anchorThree">Key Stages</a></li>
+            <li><a href="#anchorFour">Final Design</a></li>
+            <li><a href="#anchorFive">Impact</a></li>
+        </ul>
+    </div>
 
 <!-- Single paragraph -->
     <section id="anchorOne">
