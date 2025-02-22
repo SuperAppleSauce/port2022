@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const targetId = this.getAttribute('href').substring(1);
             scrollToSection(targetId);
         });
-    });
+    });sa
 
     // Add click event for Back to Top button
     backToTop.addEventListener('click', () => {

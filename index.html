@@ -30,6 +30,10 @@ body{
         }
         /* lines Loading Animation Styles */
         .grid-container {
+            background:url("https://res.cloudinary.com/dxchcqxvt/image/upload/v1740196550/baobao_bbfcxk.jpg");
+        background-position: center center;
+        background-size: cover;
+            
             position: fixed;
             top: 0;
             left: 0;
@@ -41,7 +45,7 @@ body{
             opacity: 1;
             visibility: visible;
             transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
-            background-color: var(--darkGreen); /* White background */
+            /* background-color: var(--darkGreen);  */
             z-index: 1000; /* Ensure it’s on top of other content */
         }
 
@@ -83,25 +87,23 @@ body{
 
            /* header */
 
-
-           header {
-            z-index: 200;
+        h1{
+            /* z-index: 200; */
+            color: white;
             font-family: "EB Garamond", serif;
-            
             font-optical-sizing: auto;
-            font-weight: 400;
+            font-weight: 100;
             font-size: 24px;
             line-height: auto;
-            background-color: white;
-            padding:32px;
+            background-color: none;
+            /* padding:32px; */
             align-items: center;
             text-decoration: none;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: var(--darkGreen);
-    
-           }
+            
+           } 
 
 /* breadcrumbs */
 .title-section{
@@ -110,12 +112,10 @@ body{
 
         }
         .breadcrumbs {
-
-            
-            
+            /* position: sticky; */
+            top: 12px;
             padding: 24px 0px 9px 0px;
-            margin-top: 50px ;
-            /* margin-bottom: 60px; */
+            /* margin-top: 50px ; */
             z-index: 200;
             overflow-x: auto;
             white-space: nowrap;
@@ -129,37 +129,41 @@ body{
             padding: 12px 12px;
             /* height: auto; */
             display: flex;
-            gap: 6px;
-            /* background: rgba(229, 229, 229, 0.50);
-            border: solid 0.5px #00000038; */
-            backdrop-filter: blur(60px);
+            gap: 24px;
+            
+            
         }
 
         .breadcrumbs ul li {
             font-family: "Spline Sans", sans-serif ;
             font-size: 14px;
-            /* padding: 6px 12px; */
+        
+            
+            
         }
 
         .breadcrumbs ul li a {
-            border: solid 0.5px #ffffff09;
+            border: solid 0.5px #ffffff34;
+            background: #ffffff09;
             text-decoration: none;
-            color: var(--darkGreen);
+            color: white;
             padding: 6px 12px;
             transition: color 0.3s;
             font-family: "Spline Sans", sans-serif ;
+            border-radius: var(--uniBorderRad);
+            backdrop-filter: blur(60px);
         
         }
 
         .breadcrumbs ul li a:hover, .breadcrumbs ul li a.active {
-            /* color: white; */
-            /* border-bottom: 3px solid var(--darkGreen);; */
-            /* background-color: var(--darkGreen); */
-            /* border-radius: 3px; */
+            
+            
+        
             color:white;
             border: solid 0.5px #00000009;
-            border-radius: var(--uniBorderRad);
-            background:  var(--darkGreen)
+            
+            background: #28403aea;
+            backdrop-filter: blur(60px);
             /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01); */
             /* padding: 24px; */
         }
@@ -183,13 +187,17 @@ body{
     
 
         .placeholder {
-            padding: 3px var(--uniPadding);
+        background:url("https://res.cloudinary.com/dxchcqxvt/image/upload/v1740196550/baobao_bbfcxk.jpg");
+        background-position: center center;
+        background-size: cover;
         
-            height: 40vw;
-            background-color: white;
+        padding: 3px var(--uniPadding);
+        
+            height: 60vw;
+            background-color:var(--darkGreen);
             display: flex;
             flex-direction: column;
-            gap: 50px;
+            gap: 12px;
             justify-content: center;
             align-items: center;
         
@@ -200,15 +208,14 @@ body{
         .placeholder p{
             font-family: "Spline Sans", sans-serif;
             font-size: 86px;
-             font-size: 4.5vw; 
+             font-size: 4.2vw; 
     
             line-height: auto;
             font-optical-sizing: auto;
             font-weight: 200;
             font-style: normal;
             text-align: center;
-            color: #202124;
-            color: var(--darkGreen);
+            color: white;
         }
 
         h2{
@@ -447,19 +454,19 @@ body{
 
 </div>
 
-
+<!-- 
     <header>
-        <p> Alexis Trevizo </p>
+      
 
-    </header>
+    </header> -->
 
     <div class="placeholder">
-        <!-- <p>Product Designer</p> -->
+        <h1> Alexis Trevizo </h1>
         <p>Design for Enterprise & Consumer Products. Billions in Revenue, Millions Served.</p>
         <div class="breadcrumbs animate-on-scroll">
             <ul>
                 <li><a href="#anchorOne">Work</a></li>
-                <li><a href="#anchorTwo">Lectures</a></li>
+                <!-- <li><a href="#anchorTwo">Lectures</a></li> -->
                 <li><a href="#anchorThree">About</a></li>
         
             </ul>
