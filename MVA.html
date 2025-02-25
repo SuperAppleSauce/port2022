@@ -8,107 +8,24 @@
     <title>Alexis Trevizo</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <link href="project.css" rel="stylesheet" type="text/css">
-    <style>
-        /* Simple fade-in effect */
-        body {
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        body.loaded {
-            opacity: 1;
-        }
-
-        header {
-            z-index: 200;
-            background-color: var(--darkGreen);
-            padding: 24px var(--uniPadding) ;
-
-        }
-        header .moreProjects{
-            color: white;
-            float:right;
-            font-family: "Spline Sans", sans-serif ;
-            border: var(--darkGreen) 0.5px solid;
-            padding: 6px 12px;
-            text-align: left;
-            font-optical-sizing: auto;
-            font-weight: 350;
-            font-style: normal;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-        header .moreProjects:hover{
-            border: white 0.5px solid;
-            padding: 6px 12px;
-            transition: color 0.3s;
-
-        
-        }
-
-        .title-section{
-            padding: 30px var(--uniPadding);
-
-        }
-
-    
-        section h2 {
-            margin-top: 0;
-        }
-
-  
-
-    
-        .back-to-top {
-            display: none;
-            position: fixed;
-            bottom: 32px;
-            right: var(--uniPadding);
-            background-color: var(--darkGreen);
-            color: white;
-            border:solid #fff 1px; 
-            padding: 10px 15px;
-            /* border-radius: 5px; */
-            cursor: pointer;
-            font-size: 14px;
-            z-index: 200;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-
-        @media (min-width: 769px) {
-            .breadcrumbs {
-                display: block;
-            }
-
-            .back-to-top {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .breadcrumbs {
-                display: none;
-            }
-
-            .back-to-top {
-                display: block;
-            }
-            header {
-                position: sticky;
-                top: 0;
-                padding: 20px;
-
-        }
-        }
-    </style>
+   
 </head>
 <body>
     <header>
         <a href="./index.html"> Alexis Trevizo </a>
         <a class="moreProjects" href="./index.html"> More projects </a>
     </header>
-
+    <div class="breadcrumbs">
+        <ul>
+            <li><a href="#anchorOne">The Problem</a></li>
+            <li><a href="#anchorTwo">The Solution</a></li>
+            <li><a href="#anchorStrat">Strategy</a></li>
+            <li><a href="#anchorThree">Key Stages</a></li>
+            <li><a href="#anchorFour">Final Design</a></li>
+            <li><a href="#anchorFive">Impact</a></li>
+        </ul>
+    </div>
+    
     <div id="shadowbox" class="shadowbox">
         <span class="close">&times;</span>
         <img class="shadowbox-content" id="shadowbox-img">
@@ -125,17 +42,7 @@
      
         
     </section>
-    <div class="breadcrumbs">
-        <ul>
-            <li><a href="#anchorOne">The Problem</a></li>
-            <li><a href="#anchorTwo">The Solution</a></li>
-            <li><a href="#anchorStrat">Strategy</a></li>
-            <li><a href="#anchorThree">Key Stages</a></li>
-            <li><a href="#anchorFour">Final Design</a></li>
-            <li><a href="#anchorFive">Impact</a></li>
-        </ul>
-    </div>
-    
+ 
 
 <!-- Single paragraph -->
 <section id="anchorOne">
