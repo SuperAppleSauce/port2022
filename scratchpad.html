@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Scratchpad</title>
+
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Monaco', monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #569cd6;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            color: #888;
+        }
+
+        hr {
+            border-color: #333;
+            margin: 30px 0;
+        }
+
+        #editor {
+            width: 100%;
+            height: 200px;
+            background-color: #252526;
+            border: 1px solid #3c3c3c;
+            color: #d4d4d4;
+            padding: 15px;
+            font-size: 16px;
+            line-height: 1.5;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        #editor:focus {
+            outline: 2px solid #569cd6;
+            border-color: #569cd6;
+        }
+
+        #saveBtn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #0e639c;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        #saveBtn:hover {
+            background-color: #1177bb;
+        }
+
+        .post {
+            background-color: #252526;
+            border: 1px solid #3c3c3c;
+            margin-bottom: 20px;
+            padding: 15px;
+            position: relative;
+        }
+
+        .post-content {
+            white-space: pre-wrap; /* Preserves newlines and spaces */
+            word-wrap: break-word;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #d4d4d4;
+            border: 1px solid #555;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .copy-btn:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Shared Scratchpad 📝</h1>
+        <p>Type something below and hit save. Anyone with the link can see and add to it.</p>
+        
+        <div class="editor-container">
+            <textarea id="editor" placeholder="Start writing here..."></textarea>
+            <button id="saveBtn">Save</button>
+        </div>
+
+        <hr>
+
+        <div class="posts-container" id="posts">
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        // ----------------------------------------------------
+        // PASTE YOUR SUPABASE URL AND PUBLIC ANON KEY HERE
+        // ----------------------------------------------------
+        const SUPABASE_URL = 'https://lbugisflwzqwpebspcxk.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxidWdpc2Zsd3pxd3BlYnNwY3hrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcyOTEyODcsImV4cCI6MjA3Mjg2NzI4N30.cFX8HzNyCMYjsM3bCvovAQC_j940cEqJvq_Il3EEzys';
+        // ----------------------------------------------------
+
+        // --- DOM Elements ---
+        const editor = document.getElementById('editor');
+        const saveBtn = document.getElementById('saveBtn');
+        const postsContainer = document.getElementById('posts');
+
+        // --- Initialize Supabase Client ---
+        const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        /**
+         * Fetches all posts from the database and displays them.
+         */
+        async function loadPosts() {
+            postsContainer.innerHTML = '<p>Loading posts...</p>';
+
+            const { data, error } = await db
+                .from('posts')
+                .select()
+                .order('created_at', { ascending: false }); // Show newest first
+
+            if (error) {
+                console.error('Error loading posts:', error);
+                postsContainer.innerHTML = '<p>Error loading posts. Make sure your Supabase URL and Key are correct.</p>';
+                return;
+            }
+
+            postsContainer.innerHTML = ''; // Clear loading message
+
+            if (data.length === 0) {
+                postsContainer.innerHTML = '<p>No posts yet. Be the first!</p>';
+            } else {
+                data.forEach(post => {
+                    const postElement = document.createElement('div');
+                    postElement.classList.add('post');
+
+                    // Use <pre> to keep text formatting (like line breaks)
+                    const contentElement = document.createElement('pre');
+                    contentElement.classList.add('post-content');
+                    contentElement.textContent = post.content;
+
+                    const copyButton = document.createElement('button');
+                    copyButton.classList.add('copy-btn');
+                    copyButton.textContent = 'Copy';
+                    copyButton.onclick = () => copyText(post.content, copyButton);
+
+                    postElement.appendChild(contentElement);
+                    postElement.appendChild(copyButton);
+                    postsContainer.appendChild(postElement);
+                });
+            }
+        }
+
+        /**
+         * Saves the editor's text to the database.
+         */
+        async function savePost() {
+            const textContent = editor.value.trim();
+            if (textContent.length === 0) return; // Don't save empty text
+
+            saveBtn.disabled = true;
+            saveBtn.textContent = 'Saving...';
+
+            const { error } = await db.from('posts').insert([{ content: textContent }]);
+
+            if (error) {
+                console.error('Error saving post:', error);
+                alert('Failed to save post.');
+            } else {
+                editor.value = ''; // Clear editor
+                await loadPosts(); // Refresh the posts
+            }
+            
+            saveBtn.disabled = false;
+            saveBtn.textContent = 'Save';
+        }
+
+        /**
+         * Copies a given text to the clipboard and provides user feedback.
+         */
+        function copyText(text, buttonElement) {
+            navigator.clipboard.writeText(text).then(() => {
+                buttonElement.textContent = 'Copied!';
+                setTimeout(() => {
+                    buttonElement.textContent = 'Copy';
+                }, 2000); // Reset text after 2 seconds
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        // --- Event Listeners ---
+        saveBtn.addEventListener('click', savePost);
+        document.addEventListener('DOMContentLoaded', loadPosts);
+    </script>
+</body>
+</html>
